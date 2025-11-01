@@ -13,7 +13,6 @@ export function Sidebar() {
 
   return (
     <>
-      {/* Mobile Menu Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed left-4 top-4 z-50 flex h-10 w-10 items-center justify-center rounded-lg bg-white shadow-md dark:bg-gray-800 md:hidden"
@@ -22,7 +21,6 @@ export function Sidebar() {
         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </button>
 
-      {/* Overlay */}
       {isOpen && (
         <div
           className="fixed inset-0 z-30 bg-black/50 md:hidden"
@@ -30,7 +28,6 @@ export function Sidebar() {
         />
       )}
 
-      {/* Sidebar */}
       <aside 
         className={cn(
           "fixed left-0 top-0 z-40 bg-[#F8F9FA] dark:bg-gray-900 transition-transform duration-300 ease-in-out",
@@ -39,13 +36,10 @@ export function Sidebar() {
         )}
         style={{ width: '283px', height: '100vh' }}
       >
-      {/* Sidebar Container - width: 246.5px, height: 1013.5px, top: 46px, left: 18px */}
       <div className="absolute left-[18px] top-[46px] h-[1013.5px] w-[246.5px]">
         
-        {/* Logo - width: 133px, height: 21px, top: 46px (0 relatif), left: 76px (58px relatif) */}
         <div className="absolute left-[58px] top-0">
           <Link href="/dashboard" className="flex items-center gap-2">
-            {/* <Image src="/icons/dexchangeicon.png" alt="DEXCHANGE" width={22} height={22} /> */}
             <span 
               className="block h-[21px] w-[133px]" 
               style={{ 
@@ -63,10 +57,8 @@ export function Sidebar() {
           </Link>
         </div>
 
-        {/* Menu Section - width: 219.5px, height: 408px, top: 117px, left: 31.5px */}
         <nav className="absolute left-[13.5px] top-[71px] h-[408px] w-[219.5px]">
           
-          {/* Dashboard - width: 219.5px, height: 54px, top: 117px, left: 31.5px */}
           <Link
             href="/dashboard"
             onClick={() => setIsOpen(false)}
@@ -94,7 +86,6 @@ export function Sidebar() {
             <span className="ml-3">Dashboard</span>
           </Link>
 
-          {/* Tables - width: 79.5px, height: 30px, top: 183px, left: 47.5px */}
           <Link
             href="/table"
             onClick={() => setIsOpen(false)}
@@ -122,7 +113,6 @@ export function Sidebar() {
             <span className="ml-3">Tables</span>
           </Link>
 
-          {/* Billing - width: 79px, height: 30px, top: 237px, left: 47.5px */}
           <Link
             href="/billing"
             onClick={() => setIsOpen(false)}
@@ -155,7 +145,6 @@ export function Sidebar() {
             <span className="ml-3">Billing</span>
           </Link>
 
-          {/* RTL - width: 79px, height: 30px, top: 291px, left: 47.5px */}
           <Link
             href="/rtl"
             onClick={() => setIsOpen(false)}
@@ -188,7 +177,6 @@ export function Sidebar() {
             <span className="ml-3">RTL</span>
           </Link>
 
-          {/* ACCOUNT PAGES Title - width: 105px, height: 18px, top: 345px, left: 47.5px */}
           <p 
             className="absolute left-[16px] top-[228px] h-[18px] w-[105px] text-gray-400"
             style={{
@@ -204,7 +192,6 @@ export function Sidebar() {
             Account Pages
           </p>
 
-          {/* Profile - width: 79.5px, height: 30px, top: 387px, left: 47.5px */}
           <Link
             href="/profile"
             onClick={() => setIsOpen(false)}
@@ -237,7 +224,6 @@ export function Sidebar() {
             <span className="ml-3">Profile</span>
           </Link>
 
-          {/* Sign In - width: 82.5px, height: 30px, top: 441px, left: 47.5px */}
           <Link
             href="/auth"
             onClick={() => setIsOpen(false)}
@@ -270,7 +256,6 @@ export function Sidebar() {
             <span className="ml-3">Sign In</span>
           </Link>
 
-          {/* Sign Up - width: 87.5px, height: 30px, top: 495px, left: 47.5px */}
           <Link
             href="/signup"
             onClick={() => setIsOpen(false)}
@@ -304,10 +289,8 @@ export function Sidebar() {
           </Link>
         </nav>
 
-        {/* Need Help Block - width: 246.5px, height: 465px, repositionné avec plus d'espace */}
         <div className="absolute left-0 top-[520px] h-[465px] w-[246.5px]">
           
-          {/* Green Card "Need Help" - width: 218px, height: 169.5px, centré horizontalement */}
           <div className="absolute left-[14px] top-0 h-[169.5px] w-[218px] rounded-xl border border-white bg-gradient-to-br from-[#3BD6C6] to-[#2FC1B1] p-4 text-white shadow-md">
             <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white/20">
               <Image src="/icons/interro.png" alt="" width={16} height={16} />

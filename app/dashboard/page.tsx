@@ -38,10 +38,8 @@ const projects = [
 export default function DashboardPage() {
   return (
     <div className="space-y-6">
-      {/* Breadcrumb */}
       <div>
         <p className="text-sm text-gray-500 dark:text-gray-400">Pages / Dashboard</p>
-        {/* Title - width: 43.5px, height: 19.5px */}
         <h1 
           className="dark:text-gray-100"
           style={{
@@ -57,9 +55,7 @@ export default function DashboardPage() {
         </h1>
       </div>
 
-      {/* Analytics Cards - width: 1600px, height: 64.04px, top: 82.85px, left: 298px */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {/* Today's Money */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -91,7 +87,6 @@ export default function DashboardPage() {
           </motion.div>
         </motion.div>
 
-        {/* Today's Users */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -123,7 +118,6 @@ export default function DashboardPage() {
           </motion.div>
         </motion.div>
 
-        {/* New Clients */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -155,7 +149,6 @@ export default function DashboardPage() {
           </motion.div>
         </motion.div>
 
-        {/* Total Sales */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -188,9 +181,7 @@ export default function DashboardPage() {
         </motion.div>
       </div>
 
-      {/* Big Cards Section - width: 1600px, height: 232.95px */}
       <div className="flex flex-col lg:flex-row gap-4 mt-6 w-full lg:gap-6">
-        {/* First Card - Welcome Card */}
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -202,7 +193,6 @@ export default function DashboardPage() {
             boxShadow: '0px 3.5px 5.5px 0px #00000005'
           }}
         >
-          {/* Text Content */}
           <div className="w-full sm:w-auto mb-4 sm:mb-0">
             <p 
               className="text-[#A0AEC0] dark:text-gray-400 mb-2"
@@ -239,7 +229,6 @@ export default function DashboardPage() {
             </p>
           </div>
 
-          {/* Image Container */}
           <div 
             className="relative hidden sm:block"
             style={{
@@ -269,7 +258,6 @@ export default function DashboardPage() {
           </div>
         </motion.div>
 
-        {/* Second Card - Profile Card */}
         <motion.div 
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -281,7 +269,6 @@ export default function DashboardPage() {
             boxShadow: '0px 3.5px 5.5px 0px #00000005'
           }}
         >
-          {/* Background with gradient overlay */}
           <div className="absolute inset-0 rounded-[15px] overflow-hidden">
             <div 
               className="absolute rounded-xl hidden sm:block"
@@ -334,7 +321,6 @@ export default function DashboardPage() {
             />
           </div>
 
-          {/* Text Content */}
           <div className="relative z-10 p-8" style={{ paddingTop: '30px', paddingLeft: '39px' }}>
             <h3 
               className="text-white mb-2"
@@ -363,26 +349,12 @@ export default function DashboardPage() {
         </motion.div>
       </div>
 
-    
-
-      {/* Main Content Grid */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-        {/* Left Column (2/3) */}
         <div className="space-y-6 lg:col-span-2">
-          {/* Welcome Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-          >
-            
-          </motion.div>
-
-          {/* Projects Table */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
           >
             <Card className="rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.20)]">
               <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">Projects</h2>
@@ -438,13 +410,11 @@ export default function DashboardPage() {
           </motion.div>
         </div>
 
-        {/* Right Column (1/3) */}
         <div className="space-y-6">
-          {/* Orders Overview */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.5 }}
           >
             <Card className="rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.20)]">
               <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">Orders Overview</h2>

@@ -9,7 +9,6 @@ export default function DashboardLayout({
   return (
     <div className="relative min-h-screen bg-[#F8F9FA] dark:bg-gray-950">
       <Sidebar />
-      {/* Main content area - width: 1919px, height: 1137px, left: 1px */}
       <div 
         className="ml-0 md:ml-[283px] bg-[#F8F9FA] dark:bg-gray-950" 
         style={{ 

@@ -101,10 +101,8 @@ const projects = [
 export default function TablePage() {
   return (
     <div className="space-y-6">
-      {/* Breadcrumb */}
       <div>
         <p className="text-sm text-gray-500 dark:text-gray-400">Pages / Tables</p>
-        {/* Title - width: 43.5px, height: 19.5px, top: 55px */}
         <h1 
           className="dark:text-gray-100"
           style={{
@@ -120,7 +118,6 @@ export default function TablePage() {
         </h1>
       </div>
 
-      {/* Authors Table */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -183,16 +180,14 @@ export default function TablePage() {
         </Card>
       </motion.div>
 
-      {/* Projects Table */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
         <Card className="rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.20)]">
-          <div className="mb-6">
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Projects</h2>
-            {/* V 30 done this month - width: 121.5px, height: 19.5px */}
+          <div className="mb-6 flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Projects Table</h2>
             <p
               className="dark:text-gray-400"
               style={{
