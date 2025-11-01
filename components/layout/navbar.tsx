@@ -7,10 +7,10 @@ import { Bell, User, Settings } from "lucide-react"
 export function Navbar() {
   return (
     <header className="fixed right-0 top-0 z-30 h-14 w-full bg-transparent md:w-[calc(100%-283px)]">
-      <div className="flex h-full items-center justify-end gap-4 px-4 md:px-6">
+      <div className="flex h-full items-center justify-end gap-2 px-4 md:gap-4 md:px-6">
         {/* Search Bar - width: 199px, height: 39.5px, border-radius: 15px */}
         <div 
-          className="relative flex items-center rounded-[15px] bg-white dark:bg-gray-800 px-4 border-[0.5px] border-[#E2E8F0] dark:border-gray-700"
+          className="relative hidden items-center rounded-[15px] bg-white dark:bg-gray-800 px-4 border-[0.5px] border-[#E2E8F0] dark:border-gray-700 sm:flex"
           style={{
             width: '199px',
             height: '39.5px'
@@ -32,24 +32,23 @@ export function Navbar() {
 
         {/* Menu - width: 335px, height: 39.5px, top: 22.5px, left: 1537.5px */}
         <div 
-          className="flex items-center gap-3 rounded-xl bg-white dark:bg-gray-800 px-4 border-[0.5px] border-[#E2E8F0] dark:border-gray-700"
+          className="flex items-center gap-2 rounded-xl bg-white dark:bg-gray-800 px-2 border-[0.5px] border-[#E2E8F0] dark:border-gray-700 md:gap-3 md:px-4"
           style={{
-            width: '335px',
             height: '39.5px'
           }}
         >
           <Link
             href="/auth"
-            className="text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors hover:text-[#3BD6C6]"
+            className="hidden text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors hover:text-[#3BD6C6] sm:block"
           >
             Sign In
           </Link>
           
-          <button className="flex h-8 w-8 items-center justify-center rounded-lg text-gray-600 dark:text-gray-400 transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100">
+          <button className="hidden h-8 w-8 items-center justify-center rounded-lg text-gray-600 dark:text-gray-400 transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 sm:flex">
             <User className="h-[18px] w-[18px]" />
           </button>
           
-          <button className="flex h-8 w-8 items-center justify-center rounded-lg text-gray-600 dark:text-gray-400 transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100">
+          <button className="hidden h-8 w-8 items-center justify-center rounded-lg text-gray-600 dark:text-gray-400 transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 sm:flex">
             <Settings className="h-[18px] w-[18px]" />
           </button>
           

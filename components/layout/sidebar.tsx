@@ -1,15 +1,44 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
+import { Menu, X } from "lucide-react"
 
 export function Sidebar() {
   const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <aside className="fixed left-0 top-0 z-40 hidden md:block bg-[#F8F9FA] dark:bg-gray-900" style={{ width: '283px', height: '100vh' }}>
+    <>
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="fixed left-4 top-4 z-50 flex h-10 w-10 items-center justify-center rounded-lg bg-white shadow-md dark:bg-gray-800 md:hidden"
+        aria-label="Toggle menu"
+      >
+        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+      </button>
+
+      {/* Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-black/50 md:hidden"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <aside 
+        className={cn(
+          "fixed left-0 top-0 z-40 bg-[#F8F9FA] dark:bg-gray-900 transition-transform duration-300 ease-in-out",
+          "md:translate-x-0",
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        )}
+        style={{ width: '283px', height: '100vh' }}
+      >
       {/* Sidebar Container - width: 246.5px, height: 1013.5px, top: 46px, left: 18px */}
       <div className="absolute left-[18px] top-[46px] h-[1013.5px] w-[246.5px]">
         
@@ -40,6 +69,7 @@ export function Sidebar() {
           {/* Dashboard - width: 219.5px, height: 54px, top: 117px, left: 31.5px */}
           <Link
             href="/dashboard"
+            onClick={() => setIsOpen(false)}
             className={cn(
               "absolute left-0 top-0 flex h-[54px] w-[219.5px] items-center rounded-xl px-4 transition-colors",
               pathname === "/dashboard"
@@ -67,6 +97,7 @@ export function Sidebar() {
           {/* Tables - width: 79.5px, height: 30px, top: 183px, left: 47.5px */}
           <Link
             href="/table"
+            onClick={() => setIsOpen(false)}
             className={cn(
               "absolute left-0 top-[66px] flex h-[54px] w-[219.5px] items-center rounded-xl px-4 transition-colors",
               pathname === "/table"
@@ -94,6 +125,7 @@ export function Sidebar() {
           {/* Billing - width: 79px, height: 30px, top: 237px, left: 47.5px */}
           <Link
             href="/billing"
+            onClick={() => setIsOpen(false)}
             className={cn(
               "absolute left-[16px] top-[120px] flex h-[30px] w-[79px] items-center transition-colors",
               pathname === "/billing"
@@ -126,6 +158,7 @@ export function Sidebar() {
           {/* RTL - width: 79px, height: 30px, top: 291px, left: 47.5px */}
           <Link
             href="/rtl"
+            onClick={() => setIsOpen(false)}
             className={cn(
               "absolute left-[16px] top-[174px] flex h-[30px] w-[79px] items-center transition-colors",
               pathname === "/rtl"
@@ -174,6 +207,7 @@ export function Sidebar() {
           {/* Profile - width: 79.5px, height: 30px, top: 387px, left: 47.5px */}
           <Link
             href="/profile"
+            onClick={() => setIsOpen(false)}
             className={cn(
               "absolute left-[16px] top-[270px] flex h-[30px] w-[79.5px] items-center transition-colors",
               pathname === "/profile"
@@ -206,6 +240,7 @@ export function Sidebar() {
           {/* Sign In - width: 82.5px, height: 30px, top: 441px, left: 47.5px */}
           <Link
             href="/auth"
+            onClick={() => setIsOpen(false)}
             className={cn(
               "absolute left-[16px] top-[324px] flex h-[30px] w-[82.5px] items-center transition-colors",
               pathname === "/auth"
@@ -238,6 +273,7 @@ export function Sidebar() {
           {/* Sign Up - width: 87.5px, height: 30px, top: 495px, left: 47.5px */}
           <Link
             href="/signup"
+            onClick={() => setIsOpen(false)}
             className={cn(
               "absolute left-[16px] top-[378px] flex h-[30px] w-[87.5px] items-center transition-colors",
               pathname === "/signup"
@@ -287,5 +323,6 @@ export function Sidebar() {
         </div>
       </div>
     </aside>
+    </>
   )
 }

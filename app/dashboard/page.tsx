@@ -58,7 +58,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Analytics Cards - width: 1600px, height: 64.04px, top: 82.85px, left: 298px */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {/* Today's Money */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -189,22 +189,21 @@ export default function DashboardPage() {
       </div>
 
       {/* Big Cards Section - width: 1600px, height: 232.95px */}
-      <div className="flex flex-col lg:flex-row gap-6 mt-6" style={{ width: '1600px' }}>
+      <div className="flex flex-col lg:flex-row gap-4 mt-6 w-full lg:gap-6">
         {/* First Card - Welcome Card */}
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-          className="rounded-[15px] bg-white dark:bg-gray-900 p-6 flex items-center justify-between relative overflow-hidden"
+          className="rounded-[15px] bg-white dark:bg-gray-900 p-4 flex flex-col sm:flex-row items-center justify-between relative overflow-hidden sm:p-6 w-full lg:flex-[1.4]"
           style={{
-            width: '922px',
-            height: '232.55px',
+            minHeight: '232.55px',
             boxShadow: '0px 3.5px 5.5px 0px #00000005'
           }}
         >
           {/* Text Content */}
-          <div style={{ width: '330px' }}>
+          <div className="w-full sm:w-auto mb-4 sm:mb-0">
             <p 
               className="text-[#A0AEC0] dark:text-gray-400 mb-2"
               style={{
@@ -242,7 +241,7 @@ export default function DashboardPage() {
 
           {/* Image Container */}
           <div 
-            className="relative"
+            className="relative hidden sm:block"
             style={{
               width: '360px',
               height: '204.53px'
@@ -276,19 +275,19 @@ export default function DashboardPage() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-          className="rounded-[15px] bg-white dark:bg-gray-900 relative overflow-hidden"
+          className="rounded-[15px] bg-white dark:bg-gray-900 relative overflow-hidden w-full lg:flex-1"
           style={{
-            width: '654px',
-            height: '232.55px',
+            minHeight: '232.55px',
             boxShadow: '0px 3.5px 5.5px 0px #00000005'
           }}
         >
           {/* Background with gradient overlay */}
           <div className="absolute inset-0 rounded-[15px] overflow-hidden">
             <div 
-              className="absolute rounded-xl"
+              className="absolute rounded-xl hidden sm:block"
               style={{
-                width: '619px',
+                width: '100%',
+                maxWidth: '619px',
                 height: '204.53px',
                 top: '14px',
                 left: '17.5px',
@@ -301,17 +300,19 @@ export default function DashboardPage() {
               alt="Profile" 
               width={619}
               height={330.61}
-              className="absolute object-cover"
+              className="absolute object-cover hidden sm:block"
               style={{
                 top: '-10px',
                 left: '17.5px',
-                height: '330.61px'
+                height: '330.61px',
+                maxWidth: '100%'
               }}
             />
             <div 
-              className="absolute rounded-xl"
+              className="absolute rounded-xl hidden sm:block"
               style={{
-                width: '619px',
+                width: '100%',
+                maxWidth: '619px',
                 height: '204.53px',
                 top: '14px',
                 left: '17.5px',
