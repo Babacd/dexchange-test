@@ -2,42 +2,58 @@
 
 import Link from "next/link"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { Bell, Search, User, Settings } from "lucide-react"
+import { Bell, User, Settings } from "lucide-react"
 
 export function Navbar() {
   return (
-    <header className="fixed right-0 top-0 z-30 h-14 w-full border-b border-gray-200 bg-white/70 backdrop-blur-md md:w-[calc(100%-15rem)]">
-      <div className="flex h-full items-center justify-between px-4 md:px-6">
-        {/* Left: Search */}
-        <div className="flex items-center space-x-4">
-          <div className="relative hidden md:block">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
-            <input
-              type="text"
-              placeholder="Type here..."
-              className="h-9 w-64 rounded-full border border-gray-200 bg-white pl-9 pr-3 text-sm outline-none transition-all placeholder:text-gray-400 focus:border-[#3BD6C6] focus:ring-2 focus:ring-[#3BD6C6]/20"
-            />
-          </div>
+    <header className="fixed right-0 top-0 z-30 h-14 w-full bg-transparent md:w-[calc(100%-283px)]">
+      <div className="flex h-full items-center justify-end gap-4 px-4 md:px-6">
+        {/* Search Bar - width: 199px, height: 39.5px, border-radius: 15px */}
+        <div 
+          className="relative flex items-center rounded-[15px] bg-white dark:bg-gray-800 px-4 border-[0.5px] border-[#E2E8F0] dark:border-gray-700"
+          style={{
+            width: '199px',
+            height: '39.5px'
+          }}
+        >
+          <input
+            type="text"
+            placeholder="Type here..."
+            className="w-full border-none bg-transparent outline-none text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+            style={{
+              fontFamily: 'Helvetica, sans-serif',
+              fontWeight: 400,
+              fontSize: '12px',
+              lineHeight: '150%',
+              letterSpacing: '0%'
+            }}
+          />
         </div>
 
-        {/* Right side */}
-        <div className="flex items-center space-x-3 md:space-x-4">
+        {/* Menu - width: 335px, height: 39.5px, top: 22.5px, left: 1537.5px */}
+        <div 
+          className="flex items-center gap-3 rounded-xl bg-white dark:bg-gray-800 px-4 border-[0.5px] border-[#E2E8F0] dark:border-gray-700"
+          style={{
+            width: '335px',
+            height: '39.5px'
+          }}
+        >
           <Link
             href="/auth"
-            className="hidden text-sm font-medium text-gray-700 transition-colors hover:text-[#3BD6C6] md:block"
+            className="text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors hover:text-[#3BD6C6]"
           >
             Sign In
           </Link>
           
-          <button className="flex h-8 w-8 items-center justify-center rounded-lg text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900">
+          <button className="flex h-8 w-8 items-center justify-center rounded-lg text-gray-600 dark:text-gray-400 transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100">
             <User className="h-[18px] w-[18px]" />
           </button>
           
-          <button className="flex h-8 w-8 items-center justify-center rounded-lg text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900">
+          <button className="flex h-8 w-8 items-center justify-center rounded-lg text-gray-600 dark:text-gray-400 transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100">
             <Settings className="h-[18px] w-[18px]" />
           </button>
           
-          <button className="relative flex h-8 w-8 items-center justify-center rounded-lg text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900">
+          <button className="relative flex h-8 w-8 items-center justify-center rounded-lg text-gray-600 dark:text-gray-400 transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100">
             <Bell className="h-[18px] w-[18px]" />
             <span className="absolute right-1 top-1 h-2 w-2 rounded-full bg-red-500"></span>
           </button>

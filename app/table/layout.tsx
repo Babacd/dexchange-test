@@ -7,9 +7,15 @@ export default function TableLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="relative min-h-screen bg-[#F8F9FA] dark:bg-gray-950">
       <Sidebar />
-      <div className="ml-0 md:ml-60">
+      {/* Main content area - width: 1919px, height: 1137px, left: 1px */}
+      <div 
+        className="ml-0 md:ml-[283px] bg-[#F8F9FA] dark:bg-gray-950" 
+        style={{ 
+          minHeight: '1137px'
+        }}
+      >
         <Navbar />
         <main className="px-6 py-6 pt-24 md:px-10 md:py-6">
           {children}

@@ -103,8 +103,21 @@ export default function TablePage() {
     <div className="space-y-6">
       {/* Breadcrumb */}
       <div>
-        <p className="text-sm text-gray-500">Pages / Tables</p>
-        <h1 className="text-2xl font-semibold text-gray-900 md:text-3xl">Tables</h1>
+        <p className="text-sm text-gray-500 dark:text-gray-400">Pages / Tables</p>
+        {/* Title - width: 43.5px, height: 19.5px, top: 55px */}
+        <h1 
+          className="dark:text-gray-100"
+          style={{
+            fontFamily: 'Helvetica, sans-serif',
+            fontWeight: 700,
+            fontSize: '14px',
+            lineHeight: '140%',
+            letterSpacing: '0%',
+            color: '#2D3748'
+          }}
+        >
+          Tables
+        </h1>
       </div>
 
       {/* Authors Table */}
@@ -112,11 +125,11 @@ export default function TablePage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <Card className="rounded-2xl border border-gray-100 bg-white p-6 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.20)]">
-          <h2 className="mb-6 text-lg font-semibold text-gray-900">Authors Table</h2>
+        <Card className="rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.20)]">
+          <h2 className="mb-6 text-lg font-semibold text-gray-900 dark:text-gray-100">Authors Table</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
-              <thead className="text-left text-xs font-medium uppercase text-gray-500">
+              <thead className="text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400">
                 <tr>
                   <th className="pb-3">Author</th>
                   <th className="pb-3">Function</th>
@@ -127,38 +140,38 @@ export default function TablePage() {
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {authors.map((author, index) => (
-                  <tr key={index} className="hover:bg-gray-50">
+                  <tr key={index} className="hover:bg-gray-50 dark:hover:bg-gray-800">
                     <td className="py-3">
                       <div className="flex items-center gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#3BD6C6] to-[#2FC1B1] text-sm font-semibold text-white">
                           {author.name.charAt(0)}
                         </div>
                         <div>
-                          <p className="font-medium text-gray-900">{author.name}</p>
-                          <p className="text-xs text-gray-500">{author.email}</p>
+                          <p className="font-medium text-gray-900 dark:text-gray-100">{author.name}</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">{author.email}</p>
                         </div>
                       </div>
                     </td>
                     <td className="py-3">
                       <div>
-                        <p className="font-medium text-gray-900">{author.function}</p>
-                        <p className="text-xs text-gray-500">{author.organization}</p>
+                        <p className="font-medium text-gray-900 dark:text-gray-100">{author.function}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">{author.organization}</p>
                       </div>
                     </td>
                     <td className="py-3">
                       <Badge
                         className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium ${
                           author.status === "online"
-                            ? "bg-emerald-100 text-emerald-700"
-                            : "bg-gray-200 text-gray-700"
+                            ? "bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300"
+                            : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
                         }`}
                       >
                         {author.status === "online" ? "Online" : "Offline"}
                       </Badge>
                     </td>
-                    <td className="py-3 text-gray-700">{author.employed}</td>
+                    <td className="py-3 text-gray-700 dark:text-gray-300">{author.employed}</td>
                     <td className="py-3">
-                      <button className="text-sm font-medium text-gray-600 hover:text-gray-900">
+                      <button className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">
                         Edit
                       </button>
                     </td>
@@ -176,21 +189,37 @@ export default function TablePage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        <Card className="rounded-2xl border border-gray-100 bg-white p-6 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.20)]">
-          <h2 className="mb-6 text-lg font-semibold text-gray-900">Projects</h2>
+        <Card className="rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.20)]">
+          <div className="mb-6">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Projects</h2>
+            {/* V 30 done this month - width: 121.5px, height: 19.5px */}
+            <p
+              className="dark:text-gray-400"
+              style={{
+                fontFamily: 'Helvetica, sans-serif',
+                fontWeight: 700,
+                fontSize: '14px',
+                lineHeight: '140%',
+                letterSpacing: '0%',
+                color: '#A0AEC0'
+              }}
+            >
+              ✓ 30 done this month
+            </p>
+          </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
-              <thead className="text-left text-xs font-medium uppercase text-gray-500">
+              <thead className="text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400">
                 <tr>
                   <th className="pb-3">Companies</th>
-                  <th className="pb-3">Budget</th>
+                  <th className="pb-3 text-left">Budget</th>
                   <th className="pb-3">Status</th>
                   <th className="pb-3">Completion</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {projects.map((project, index) => (
-                  <tr key={index} className="hover:bg-gray-50">
+                  <tr key={index} className="hover:bg-gray-50 dark:hover:bg-gray-800">
                     <td className="py-3">
                       <div className="flex items-center gap-3">
                         <div
@@ -198,27 +227,22 @@ export default function TablePage() {
                         >
                           {project.logo}
                         </div>
-                        <span className="font-medium text-gray-900">{project.company}</span>
+                        <span className="font-medium text-gray-900 dark:text-gray-100">{project.company}</span>
                       </div>
                     </td>
-                    <td className="py-3 text-right font-medium text-gray-900">{project.budget}</td>
+                    <td className="py-3 text-left font-medium text-gray-900 dark:text-gray-100">{project.budget}</td>
                     <td className="py-3">
                       <span
-                        className={`text-sm font-medium ${
-                          project.status === "Done"
-                            ? "text-green-600"
-                            : project.status === "Working"
-                            ? "text-blue-600"
-                            : "text-red-600"
-                        }`}
+                        className="text-sm font-medium dark:text-gray-300"
+                        style={{ color: '#2D3748' }}
                       >
                         {project.status}
                       </span>
                     </td>
                     <td className="py-3">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-medium text-gray-600">{project.completion}%</span>
-                        <div className="h-1.5 w-24 overflow-hidden rounded-full bg-gray-200">
+                        <span className="text-xs font-medium text-gray-600 dark:text-gray-400">{project.completion}%</span>
+                        <div className="h-1.5 w-24 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
                           <div
                             className="h-full rounded-full bg-[#3BD6C6]"
                             style={{ width: `${project.completion}%` }}
