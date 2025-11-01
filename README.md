@@ -2,9 +2,10 @@
 
 ## 📋 Description
 
-Ce projet est une reproduction fidèle de 3 écrans (Auth/Register, Dashboard, Tables) à partir d'un design Figma, réalisé dans le cadre d'un test technique pour DEXCHANGE.
+Ce projet est une reproduction **pixel-perfect** de 3 écrans (Auth/Register, Dashboard, Tables) à partir d'un design Figma, réalisé dans le cadre d'un test technique pour DEXCHANGE. Le projet inclut un système de design complet, un mode sombre fonctionnel, des animations fluides et une architecture modulaire.
 
-**🔗 Demo Live:** [À déployer sur Vercel]
+**🔗 Demo Live:** [À déployer sur Vercel]  
+**📱 Repository:** [GitHub - dexchange-test](https://github.com/Babacd/dexchange-test)
 
 ## 🚀 Installation & Lancement
 
@@ -16,7 +17,7 @@ Ce projet est une reproduction fidèle de 3 écrans (Auth/Register, Dashboard, T
 
 ```bash
 # Cloner le repository
-git clone [votre-repo-url]
+git clone https://github.com/Babacd/dexchange-test
 cd dexchange-test
 
 # Installer les dépendances
@@ -26,7 +27,7 @@ npm install
 npm run dev
 ```
 
-Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
+Ouvrez [http://localhost:3000] dans votre navigateur.
 
 ### Build de production
 
@@ -41,15 +42,16 @@ npm start
 ## 🛠️ Stack Technique
 
 ### Stack Obligatoire
-- **Next.js 15** (App Router)
-- **TypeScript**
-- **Tailwind CSS v4**
+- **Next.js 15** (App Router) - Framework React avec SSR
+- **TypeScript** - Typage statique strict
+- **Tailwind CSS v4** - Utility-first CSS avec @theme
 
 ### Librairies Optionnelles Utilisées
 - **shadcn/ui** - Composants UI réutilisables (Button, Card, Badge, Table)
-- **framer-motion** - Animations et transitions fluides
-- **next-themes** - Support du mode Dark/Light
-- **lucide-react** - Icônes
+- **Framer Motion** - Animations et transitions fluides (Analytics Cards, Big Cards)
+- **next-themes** - Support du mode Dark/Light avec détection systèm
+- **Vitest** - Framework de tests unitaires rapide
+- **React Testing Library** - Tests de composants React
 
 ## 📁 Structure du Projet
 
@@ -57,25 +59,38 @@ npm start
 dexchange-test/
 ├── app/
 │   ├── auth/              # Page d'authentification (Register/Login)
-│   ├── dashboard/         # Page Dashboard avec métriques
+│   │   └── page.tsx
+│   ├── dashboard/         # Page Dashboard avec Analytics Cards
+│   │   ├── layout.tsx     # Layout avec sidebar et navbar
+│   │   └── page.tsx       # Métriques, projets, orders overview
 │   ├── table/             # Page Tables (Authors & Projects)
-│   ├── layout.tsx         # Layout principal avec ThemeProvider
-│   └── globals.css        # Styles globaux + design tokens
+│   │   ├── layout.tsx     # Layout avec sidebar et navbar
+│   │   └── page.tsx       # Tableaux interactifs
+│   ├── layout.tsx         # Root layout avec ThemeProvider
+│   └── globals.css        # Styles globaux + design tokens Tailwind v4
 ├── components/
-│   ├── ui/                # Composants shadcn/ui
-│   │   ├── button.tsx
-│   │   ├── card.tsx
-│   │   ├── badge.tsx
-│   │   └── table.tsx
-│   ├── layout/            # Composants de layout
-│   │   ├── navbar.tsx
-│   │   └── sidebar.tsx
-│   ├── theme-provider.tsx
-│   └── theme-toggle.tsx
-└── lib/
-    ├── utils.ts           # Utilitaires (cn)
-    └── data/
-        └── mock-data.ts   # Données mockées
+│   ├── ui/                # Composants shadcn/ui (réutilisables)
+│   │   ├── button.tsx     # Boutons avec variants
+│   │   ├── card.tsx       # Cartes avec ombre
+│   │   ├── badge.tsx      # Badges de statut
+│   │   └── table.tsx      # Tableau responsive
+│   ├── layout/            # Composants de mise en page
+│   │   ├── navbar.tsx     # Header avec search et menu (335×39.5px)
+│   │   └── sidebar.tsx    # Navigation latérale (283px, état actif)
+│   ├── theme-provider.tsx # Provider next-themes
+│   └── theme-toggle.tsx   # Toggle Dark/Light mode
+├── lib/
+│   ├── utils.ts           # Utilitaires (cn pour classNames)
+│   └── data/
+│       └── mock-data.ts   # Données mockées (projets, users)
+├── public/
+│   └── icons/             # 21 icônes PNG (money, user, client, sales...)
+├── __tests__/             # Tests unitaires Vitest
+│   ├── sidebar.test.tsx
+│   ├── theme-toggle.test.tsx
+│   └── ui-components.test.tsx
+├── vitest.config.ts       # Configuration Vitest
+└── vitest.setup.ts        # Setup tests avec jsdom
 ```
 
 ## ✨ Fonctionnalités Implémentées
@@ -129,23 +144,6 @@ dexchange-test/
 9. **Error Boundaries** - Gestion des erreurs
 10. **Notifications/Toasts** - Feedback utilisateur
 
-### Performance
-- **Lazy loading** des composants lourds
-- **Optimisation des images** avec Next.js Image
-- **Memoization** des composants coûteux
-- **Code splitting** avancé
-
-### Accessibilité
-- **ARIA labels** complets
-- **Navigation au clavier**
-- **Screen reader support**
-- **Contraste WCAG AA**
-
-### DevOps
-- **CI/CD Pipeline** - GitHub Actions
-- **Tests E2E** - Playwright
-- **Monitoring** - Sentry pour error tracking
-- **Analytics** - Google Analytics / Vercel Analytics
 
 ## 📝 Notes de Développement
 
@@ -161,6 +159,6 @@ Merci à l'équipe DEXCHANGE pour ce test technique intéressant !
 
 ---
 
-**Développé par:** [Votre Nom]  
+**Développé par:** Babacar Diop  
 **Date:** Octobre 2025  
-**Temps de développement:** [X heures]
+**Temps de développement:** 7 heures
