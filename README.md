@@ -4,8 +4,8 @@
 
 Ce projet est une reproduction **pixel-perfect** de 3 écrans (Auth/Register, Dashboard, Tables) à partir d'un design Figma, réalisé dans le cadre d'un test technique pour DEXCHANGE. Le projet inclut un système de design complet, un mode sombre fonctionnel, des animations fluides et une architecture modulaire.
 
-**🔗 Demo Live:** [À déployer sur Vercel]  
-**📱 Repository:** [GitHub - dexchange-test](https://github.com/Babacd/dexchange-test)
+**🔗 Demo Live:** https://dexchange-test-xrrq.vercel.app/  
+**📱 Repository:** (https://github.com/Babacd/dexchange-test)
 
 ## 🚀 Installation & Lancement
 
@@ -161,4 +161,4 @@ Merci à l'équipe DEXCHANGE pour ce test technique intéressant !
 
 **Développé par:** Babacar Diop  
 **Date:** Octobre 2025  
-**Temps de développement:** 7 heures
+**Temps de développement:** 8 heures
